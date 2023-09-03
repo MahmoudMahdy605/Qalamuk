@@ -2,6 +2,8 @@ import "@/style/global.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
+import { theme } from "@/style/theme/palette";
+import { ThemeProvider } from "@mui/material";
 
 const surt = localFont({
   src: "../assets/fonts/GEDinkum-Bold-1.ttf",
@@ -10,9 +12,11 @@ const surt = localFont({
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${surt.variable} font-sans`} dir="rtl">
-      <Navbar />
-      <Component {...pageProps} />
-    </main>
+    <ThemeProvider theme={theme}>
+      <main className={`${surt.variable} font-sans`} dir="rtl">
+        <Navbar />
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
   );
 }
