@@ -98,7 +98,14 @@ export const Navbar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  "&:hover": {
+                    background: theme.palette.secondary.main,
+                  },
+                }}
               >
                 {page}
               </Button>
