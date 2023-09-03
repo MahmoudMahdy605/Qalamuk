@@ -10,6 +10,7 @@ import {
   Button,
   MenuItem,
   Avatar,
+  useTheme,
 } from "@mui/material";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "&/public/images/Logo.jpeg";
@@ -17,6 +18,7 @@ import Logo from "&/public/images/Logo.jpeg";
 const pages = ["الاول", "الثاني", "الثالث"];
 
 export const Navbar = () => {
+  const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -30,16 +32,23 @@ export const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar sx={{ position: "fixed", left: "0", top: "0", width: "100%" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ gap: 2 }}>
           <Avatar
             src={Logo.src}
             variant="rounded"
             sx={{ height: "60px", width: "60px" }}
           />
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "end",
+              color: theme.palette.secondary.main,
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -69,30 +78,16 @@ export const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ width: "100%" }}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
