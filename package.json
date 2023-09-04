@@ -29,5 +29,8 @@
     "styled-components": "^5.3.11",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^5.2.6"
   }
 }
