@@ -20,6 +20,8 @@ export const Footer = () => {
       sx={{
         backgroundColor: theme.palette.grey[200],
         pb: 4,
+        display: 'flex',
+        marginTop: 70
       }}
     >
       <Container maxWidth="md">
