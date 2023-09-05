@@ -14,6 +14,9 @@ import {
 } from "@mui/material";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "&/public/images/Logo.jpeg";
+import localFont from "next/font/local"
+
+const myFont = localFont({src: '../../fonts/GEDinkum-Bold-1.ttf'})
 
 const pages = ["الاول", "الثاني", "الثالث"];
 
@@ -81,9 +84,9 @@ export const Navbar = () => {
                 <MenuItem
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ width: "100%" }}
+                  sx={{ width: "100%",  }}
                 >
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>

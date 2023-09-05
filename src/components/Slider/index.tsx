@@ -14,30 +14,36 @@ import localFont from "next/font/local"
 import '../../styles/global.css'
 import backImage from '../images/abdulrhman-alkhnaifer-I4B-IZ7cd-g-unsplash.jpg'
 
+import image1 from '../../images/scott-graham-OQMZwNd3ThU-unsplash.jpg'
+import image2 from '../../images/levi-meir-clancy-ruWf1KGPPsY-unsplash.jpg'
+import image3 from '../../images/godwin-bephin-CcMBS9CtPhw-unsplash.jpg'
+import image4 from '../../images/rishab-lamichhane--jIc0pEIQhA-unsplash.jpg'
+import image5 from '../../images/mostafa-meraji-YACrNE-CSJk-unsplash.jpg'
+import image6 from '../../images/face-cover.jpg'
 const myFont = localFont({src: '../../fonts/GEDinkum-Bold-1.ttf'})
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
     label: 'نفخر بشراكتنا المستمرة مع عدد من الجهات الحكومية، ومساهمتنا في تقريب خدماتهم من المستفيدين وتقديم حلول تواصل ذكية',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: image5.src
   },
   {
     label: 'ندرك حاجة القطاع الخاص إلى التواصل الدائم مع العملاء؛ لذلك نقدم لهم منتجات مبتكرة تحقق أهدافهم',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: image2.src
+      
   },
   {
     label: ' محمد بيه القحطاني نصنع محتوى للشخصيات البارزة ورجال الأعمال بما يحقق لهم الظهور الإعلامي المميز والتفاعل المؤثر، والتوثيق المثمر للأعمال والمنجزات.',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
+    imgPath: image3.src
   },
   {
     label: 'نصنع محتوى للشخصيات البارزة ورجال الأعمال بما يحقق لهم الظهور الإعلامي المميز والتفاعل المؤثر، والتوثيق المثمر للأعمال والمنجزات.',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: image4.src
   },
+  {
+    label: 'ندرك حاجة القطاع الخاص إلى التواصل الدائم مع العملاء؛ لذلك نقدم لهم منتجات مبتكرة تحقق أهدافهم',
+    imgPath: image1.src  },
 ];
 const Slider = () => {
     const theme = useTheme();
@@ -57,9 +63,11 @@ const Slider = () => {
     };
   
     return (
-      <Box sx={{  flexGrow: 1, display: 'flex',
-       flexDirection: 'column', justifyContent: 'center', padding:20,
-       backgroundColor:'blue_gradient', }}  >
+      <Box sx={{  flexGrow: 1, display: 'block',
+       flexDirection: 'column', justifyContent: 'center', paddingLeft:20, paddingRight: 20,  
+         }} 
+       
+       >
   
         
          
@@ -68,22 +76,31 @@ const Slider = () => {
             index={activeStep}
             onChangeIndex={handleStepChange}
             enableMouseEvents
+            interval={10000}
           >
             {images.map((step, index) => (
-              <div key={step.label}>
+                <div key={step.label}>
                 {Math.abs(activeStep - index) <= 2 ? (
-                <Box sx={{display: 'flex', alignItems: 'center' , justifyContent: 'space-between' ,}}>
+                    <Box sx={{display: 'flex', alignItems: 'center' , justifyContent: 'space-between' ,}}>
   
                     <Box
                       component="img"
+                      className ='sliderImage'
                       sx={{
-                        height: 400,
+                        height: 500,
                         // display: 'block',
                         // maxWidth: 600,
                         overflow: 'hidden',
                         // width: 600,
                         borderRadius: 10,
-                        marginTop: 7,
+                        // marginTop: 7,
+                        ":hover":{
+                          // border: "5px #16B0D4 solid ",
+                          opacity: 0.8, 
+                          // transition: '0.5 ease',
+                          transitionDuration: '200ms',
+                          boxShadow: '0 0 3px'
+                        }
                       }}
                       src={step.imgPath}
                       alt={step.label}
@@ -100,7 +117,7 @@ const Slider = () => {
                       bgcolor: 'background.default',
                     }}
                     >
-                    <Typography style={myFont.style} color={'#16B0D4'} maxWidth={350} textAlign={'right'} >
+                    <Typography style={myFont.style} color={'#16B0D4'} maxWidth={350} textAlign={'right'}  >
                       <p style={myFont.style} className='desc' >قَلَمُك </p>
                       {images[activeStep].label}
                       {/* <h1>2015 </h1> */}
@@ -113,6 +130,7 @@ const Slider = () => {
             ))}
           </AutoPlaySwipeableViews>
         <MobileStepper
+          
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
