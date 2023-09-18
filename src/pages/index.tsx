@@ -6,7 +6,7 @@ const Page = () => {
   return (
     
     <Stack height={"90vh"} sx={{ display: 'flex', justifyContent: 'center' }}>
-      <SlideShow/>
+      {/* <SlideShow/> */}
       <Slider/>
       {/* <Stack m={3}>App home page</Stack>
       <Stack m={3}>App home page</Stack>

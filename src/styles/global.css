@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,6 +67,33 @@
   top: 80px;
   opacity: 0.15;
 }
+
+.wrapper{
+  margin-top: 100px;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topImage{
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.img{
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+
+
+.slideButton{
+  background-color: #F3921F;
+  width: 230px;
+}
+
 
 @media screen and (max-width: 640px) {
   .main {
