@@ -11,7 +11,7 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import localFont from "next/font/local";
-import "../../styles/global.css";
+import "../../style/global.css";
 import backImage from "../images/abdulrhman-alkhnaifer-I4B-IZ7cd-g-unsplash.jpg";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import BusinessIcon from "@mui/icons-material/Business";
@@ -73,7 +73,7 @@ const Slider = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval={1000000}
+        interval={10000}
       >
         {images.map((step, index) => (
           <div key={step.label}>
@@ -186,25 +186,25 @@ const Slider = () => {
         activeStep={activeStep}
         nextButton={
           <Button
-            hidden
+            sx={{display:'none'}}
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
-          >
+            >
             {/* Next */}
             {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
+              ) : (
+                <KeyboardArrowLeft />
+                )}
           </Button>
         }
         backButton={
           <Button
+            sx={{display:'none'}}
             size="small"
             onClick={handleBack}
             disabled={activeStep === 0}
-            hidden
           >
             {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
