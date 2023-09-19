@@ -147,7 +147,12 @@ const Slider = () => {
                         fontWeight={600}
                       >
                         <p> تعرف على خدمات قَلَمُك في السنوات الأخيرة</p>
-                        <NotificationsIcon sx={{ display: "inline-block" }} />
+                        <NotificationsIcon
+                          sx={{
+                            display: "inline-block",
+                            color: theme.palette.secondary.main,
+                          }}
+                        />
                       </Box>
                       <Box
                         className="secondLine"
@@ -161,7 +166,9 @@ const Slider = () => {
                         fontWeight={600}
                       >
                         <p> تعرف على أهم انجازاتنا في السنوات الأخيرة </p>
-                        <BusinessIcon />
+                        <BusinessIcon
+                          sx={{ color: theme.palette.secondary.main }}
+                        />
                       </Box>
                     </Box>
                   </>

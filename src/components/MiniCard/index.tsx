@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, useTheme } from "@mui/material";
 import Counter from "react-countup";
 import { CalendarOutlined } from "@ant-design/icons";
 
@@ -12,6 +12,7 @@ export const MiniCard = ({
   text: string;
   Icon: any;
 }) => {
+  const theme = useTheme();
   return (
     <Stack
       width={"100%"}
@@ -21,7 +22,7 @@ export const MiniCard = ({
       alignItems={"center"}
       my={3}
     >
-      <Icon style={{ fontSize: "48px" }} />
+      <Icon style={{ fontSize: "48px", color: theme.palette.secondary.main }} />
       <Stack justifyContent={"center"} alignItems={"center"}>
         <Typography color="primary.main" fontSize={32} fontWeight={"800"}>
           +<Counter duration={2.5} start={1} end={value} />
