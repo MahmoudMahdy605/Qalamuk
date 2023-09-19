@@ -138,11 +138,11 @@ body {
   @apply mt-5 text-lg text-gray-600 sm:text-4xl max-w-2xl;
   color: #F3921F;
 }
-.MuiMobileStepper-dot {
+/* .MuiMobileStepper-dot {
   border-radius: 25px;
   width: 25px;
   height: 8px;
-}
+} */
 .search_input {
   @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
