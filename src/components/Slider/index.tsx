@@ -126,12 +126,15 @@ const Slider = () => {
                       display={"flex"}
                       sx={{
                         position: "absolute",
-                        borderRadius: "4px",
+                        borderRadius: "0 4px 0 0",
                         left: "0%",
                         right: "35%",
                         bottom: "0%",
                         top: "90%",
-                        backgroundColor: alpha(theme.palette.primary.main, 0.6),
+                        background: `linear-gradient(to top, ${
+                          theme.palette.primary.main
+                        }, ${alpha(theme.palette.primary.main, 0.4)})`,
+                        // alpha(theme.palette.primary.main, 0.6),
                         p: 1,
                       }}
                     >
