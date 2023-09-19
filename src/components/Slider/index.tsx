@@ -180,7 +180,18 @@ const Slider = () => {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
-        sx={{ flexDirection: "column" }}
+        // sx={{ flexDirection: "column" }}
+        sx={(theme) =>({
+          flexDirection: "column", 
+
+          "& .MuiMobileStepper-dot ":{
+            borderRadius: 25,
+            width: 25,
+            height:8
+          }
+        }) 
+      }
+
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
