@@ -11,7 +11,11 @@ import { Grid, Stack } from "@mui/material";
 
 const Page = () => {
   return (
-    <Stack height={"90vh"} sx={{ display: "flex", justifyContent: "center" }}>
+    <Stack
+      height={"90vh"}
+      pt={{ md: "69px", sm: "64px" }}
+      sx={{ display: "flex", justifyContent: "center" }}
+    >
       <Slider />
       <Grid container my={4} rowGap={3}>
         <Grid item xs={6} md={3}>

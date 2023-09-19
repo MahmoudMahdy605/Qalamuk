@@ -1,53 +1,33 @@
-import React from 'react'
+import React from "react";
 // import image1 from "../../images/linkedin-cover.jpg";
 import image1 from "../../images/web-cover.png";
-import { Avatar, Box, } from '@mui/material';
+import { Avatar, Box } from "@mui/material";
 const SlideShow = () => {
-    return (
-      
-      <Box sx={{ width: '100%', display:'flex', alignItems: 'center',  }} >
-            <Box  component="img"
-                      className ='sliderImage'
-                      sx={{
-                        height: 620,
-                        width: "100%",
-                        // display: 'block',
-                        // maxWidth: 600,
-                        // overflow: 'hidden',
-                        // width: 600,
-                        // borderRadius: 10,
-                        marginTop: 238,
-                        // marginBottom: 10,
-                        // zIndex: 1
-                      }}
-                      src={image1.src}
-                // src={image1.src}
-              />
-        </Box >
-      )
-    }
+  return (
+    <Box sx={{ width: "100%", display: "flex", alignItems: "center" }}>
+      <Box
+        component="img"
+        className="sliderImage"
+        sx={{
+          height: 620,
+          width: "100%",
+          // display: 'block',
+          // maxWidth: 600,
+          // overflow: 'hidden',
+          // width: 600,
+          // borderRadius: 10,
+          // marginTop: 238,
+          // marginBottom: 10,
+          // zIndex: 1
+        }}
+        src={image1.src}
+        // src={image1.src}
+      />
+    </Box>
+  );
+};
 
-export default SlideShow
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default SlideShow;
 
 // **********************************************************************************************************
 
@@ -66,12 +46,9 @@ export default SlideShow
 
 // export default SlideShow;
 
-
-
 // **********************************************************************************************************
 
 // display text when hover
-
 
 // import React from "react";
 // import image1 from "../../images/web-cover.png";
@@ -92,5 +69,3 @@ export default SlideShow
 // }
 
 // export default SlideShow;
-
-

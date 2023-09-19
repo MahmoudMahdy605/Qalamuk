@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import Paper from "@mui/material/Paper";
@@ -91,23 +91,10 @@ const Slider = () => {
                   className="sliderImage"
                   sx={{
                     position: "relative",
-                    height: 650,
-                    // display: 'block',
-                    // maxWidth: 600,
                     overflow: "hidden",
                     width: "100%",
-                    // borderRadius: 5,
-                    marginTop: 15,
-                    // ":hover":{
-                    //   // border: "5px #16B0D4 solid ",
-                    //   opacity: 0.8,
-                    //   // transition: '0.5 ease',
-                    //   transitionDuration: '200ms',
-                    //   boxShadow: '0 0 3px'
-                    // }
                   }}
                   src={step.imgPath}
-                  // alt={step.label}
                 />
                 {/*  adding a button and links to the first slide */}
                 {index === 0 && (
@@ -117,8 +104,8 @@ const Slider = () => {
                       style={myFont.style}
                       sx={{
                         position: "absolute",
-                        marginLeft: '74%',
-                        marginTop: '47%',
+                        bottom: "2%",
+                        right: "10%",
                         borderRadius: 10,
                         backgroundColor: "orange",
                         color: "white",
@@ -134,25 +121,46 @@ const Slider = () => {
                     </Button>
                     <Box
                       position={"absolute"}
-                      marginLeft={5}
                       color={"white"}
-                      width={"55%"}
                       justifyContent={"space-between"}
                       display={"flex"}
-                      marginTop={'47%'}
+                      sx={{
+                        position: "absolute",
+                        borderRadius: "4px",
+                        left: "0%",
+                        right: "35%",
+                        bottom: "0%",
+                        top: "90%",
+                        backgroundColor: alpha(theme.palette.primary.main, 0.6),
+                        p: 1,
+                      }}
                     >
                       <Box
                         className="firstLine"
-                        sx={{ display: "flex", justifyContent: "center" }}
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          gap: 0.5,
+                        }}
+                        fontSize={20}
+                        fontWeight={600}
                       >
-                        <p>  تعرف على خدمات قَلَمُك في السنوات الأخيرة</p>
+                        <p> تعرف على خدمات قَلَمُك في السنوات الأخيرة</p>
                         <NotificationsIcon sx={{ display: "inline-block" }} />
                       </Box>
                       <Box
                         className="secondLine"
-                        sx={{ display: "flex", justifyContent: "center" }}
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          gap: 0.5,
+                        }}
+                        fontSize={20}
+                        fontWeight={600}
                       >
-                        <p>   تعرف على أهم انجازاتنا في السنوات الأخيرة </p>
+                        <p> تعرف على أهم انجازاتنا في السنوات الأخيرة </p>
                         <BusinessIcon />
                       </Box>
                     </Box>
@@ -181,38 +189,36 @@ const Slider = () => {
       </AutoPlaySwipeableViews>
       <MobileStepper
         // sx={{ flexDirection: "column" }}
-        sx={(theme) =>({
-          flexDirection: "column", 
+        sx={(theme) => ({
+          flexDirection: "column",
 
-          "& .MuiMobileStepper-dot ":{
+          "& .MuiMobileStepper-dot ": {
             borderRadius: 25,
             width: 25,
-            height:8
-          }
-        }) 
-      }
-
+            height: 8,
+          },
+        })}
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
         nextButton={
           <Button
-            sx={{display:'none'}}
+            sx={{ display: "none" }}
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
-            >
+          >
             {/* Next */}
             {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-                )}
+            ) : (
+              <KeyboardArrowLeft />
+            )}
           </Button>
         }
         backButton={
           <Button
-            sx={{display:'none'}}
+            sx={{ display: "none" }}
             size="small"
             onClick={handleBack}
             disabled={activeStep === 0}
