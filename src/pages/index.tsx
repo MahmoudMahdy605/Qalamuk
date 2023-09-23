@@ -12,7 +12,7 @@ import { Grid, Stack } from "@mui/material";
 const Page = () => {
   return (
     <Stack
-      height={"90vh"}
+      // height={"90vh"}
       pt={{ md: "69px", sm: "64px" }}
       sx={{ display: "flex", justifyContent: "center" }}
     >
