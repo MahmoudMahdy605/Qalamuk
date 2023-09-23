@@ -19,16 +19,16 @@ const Page = () => {
       <Slider />
       <Grid container my={4} rowGap={3}>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"مدونة"} value={1100} Icon={BookOutlined} />
+          <MiniCard text={"مشروع"} value={1300} Icon={BookOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"سنة"} value={12} Icon={FieldTimeOutlined} />
+          <MiniCard text={"عميل راضٍ"} value={600} Icon={FieldTimeOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"عميل"} value={2300} Icon={UserSwitchOutlined} />
+          <MiniCard text={"نص إبداعي"} value={3500} Icon={UserSwitchOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"مشروع"} value={250} Icon={AuditOutlined} />
+          <MiniCard text={"بروفايل شركة"} value={350} Icon={AuditOutlined} />
         </Grid>
       </Grid>
     </Stack>
