@@ -14,20 +14,27 @@ export const MiniCard = ({
 }) => {
   const theme = useTheme();
   return (
-    <Stack
-      width={"100%"}
-      height={80}
-      boxShadow={"revert"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      my={3}
-    >
-      <Icon style={{ fontSize: "48px", color: theme.palette.secondary.main }} />
-      <Stack justifyContent={"center"} alignItems={"center"}>
-        <Typography color="primary.main" fontSize={32} fontWeight={"800"}>
-          +<Counter duration={2.5} start={1} end={value} />
-        </Typography>
-        <Typography color={"gray"}>{text}</Typography>
+    <Stack justifyContent={"center"} alignItems={"center"} width={"100%"}>
+      <Stack
+        width={"190px"}
+        p={4}
+        borderRadius={2}
+        boxShadow={4}
+        justifyContent={"center"}
+        alignItems={"center"}
+        my={3}
+      >
+        <Icon
+          style={{ fontSize: "48px", color: theme.palette.secondary.main }}
+        />
+        <Stack justifyContent={"center"} alignItems={"center"}>
+          <Typography color="primary.main" fontSize={32} fontWeight={"800"}>
+            +<Counter duration={2.5} start={1} end={value} />
+          </Typography>
+          <Typography color={"gray"} fontSize={20} fontWeight={"600"}>
+            {text}
+          </Typography>
+        </Stack>
       </Stack>
     </Stack>
   );
