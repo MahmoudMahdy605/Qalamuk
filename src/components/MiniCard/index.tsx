@@ -23,6 +23,14 @@ export const MiniCard = ({
         justifyContent={"center"}
         alignItems={"center"}
         my={3}
+        sx={{
+          transform: "scale(1, 1)",
+          transition: "1s",
+
+          "&:hover": {
+            transform: "scale(1.1, 1.1)",
+          },
+        }}
       >
         <Icon
           style={{ fontSize: "48px", color: theme.palette.secondary.main }}
