@@ -5,27 +5,26 @@ import {
   AuditOutlined,
   UserSwitchOutlined,
   BookOutlined,
-  FieldTimeOutlined,
+  FileTextOutlined,
 } from "@ant-design/icons";
 import { Grid, Stack } from "@mui/material";
 
 const Page = () => {
   return (
     <Stack
-      // height={"90vh"}
       pt={{ md: "69px", sm: "64px" }}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <Slider />
-      <Grid container my={4} rowGap={3}>
+      <Grid container my={3} rowGap={3}>
         <Grid item xs={6} md={3}>
           <MiniCard text={"مشروع"} value={1300} Icon={BookOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"عميل راضٍ"} value={600} Icon={FieldTimeOutlined} />
+          <MiniCard text={"عميل راضٍ"} value={600} Icon={UserSwitchOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
-          <MiniCard text={"نص إبداعي"} value={3500} Icon={UserSwitchOutlined} />
+          <MiniCard text={"نص إبداعي"} value={3500} Icon={FileTextOutlined} />
         </Grid>
         <Grid item xs={6} md={3}>
           <MiniCard text={"بروفايل شركة"} value={350} Icon={AuditOutlined} />
