@@ -14,9 +14,9 @@ import {
 } from "@mui/material";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "&/public/images/Logo.jpeg";
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 
-const myFont = localFont({src: '../../fonts/GEDinkum-Bold-1.ttf'})
+const myFont = localFont({ src: "../../fonts/GEDinkum-Bold-1.ttf" });
 
 const pages = ["الاول", "الثاني", "الثالث"];
 
@@ -41,7 +41,16 @@ export const Navbar = () => {
           <Avatar
             src={Logo.src}
             variant="rounded"
-            sx={{ height: "60px", width: "60px" }}
+            sx={{
+              height: "60px",
+              width: "60px",
+              transform: "scale(1, 1)",
+              transition: "1s",
+
+              "&:hover": {
+                transform: "scale(1.3, 1.3)",
+              },
+            }}
           />
 
           <Box
@@ -84,9 +93,9 @@ export const Navbar = () => {
                 <MenuItem
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ width: "100%",  }}
+                  sx={{ width: "100%" }}
                 >
-                  <Typography textAlign="center" >{page}</Typography>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
