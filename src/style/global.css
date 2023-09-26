@@ -100,7 +100,8 @@ body {
 } */
 @media screen and (min-width: 1540px) {
   .sliderImage {
-    height: 630px;
+    /* height: 630px; */
+    height: 831px;
   }
 }
 

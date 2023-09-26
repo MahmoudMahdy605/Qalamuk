@@ -13,7 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { MenuOutlined } from "@ant-design/icons";
-import Logo from "&/public/images/Logo.jpeg";
+import Logo from "&/public/images/logo2-rgb-orange&white.png";
 import localFont from "next/font/local";
 
 const myFont = localFont({ src: "../../fonts/GEDinkum-Bold-1.ttf" });
@@ -42,7 +42,7 @@ export const Navbar = () => {
             src={Logo.src}
             variant="rounded"
             sx={{
-              height: "60px",
+              height: "70px",
               width: "60px",
               transform: "scale(1, 1)",
               transition: "1s",
