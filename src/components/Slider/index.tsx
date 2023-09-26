@@ -72,7 +72,7 @@ const Slider = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval={10000}
+        interval={1000000}
       >
         {images.map((step, index) => (
           <div key={`slider-${index}`}>
@@ -112,7 +112,7 @@ const Slider = () => {
                         fontSize: 20,
                         ":hover": {
                           backgroundColor: "#16B0D4",
-                          transform: "translateY(-7px)",
+                          transform: "translateY(-3px)",
                           transition: "0.3s",
                         },
                       }}
@@ -186,22 +186,37 @@ const Slider = () => {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <MobileStepper
+      <MobileStepper                                      //for the arrows
         sx={(theme) => ({
+          display: isMobile? 'none' : '',
           flexDirection: "row-reverse",
-
+          position: 'absolute',
+          top: '50%',
+          width: '100%',
+          color: 'white',
+          backgroundColor:'rgba(0,0,0,0)',
           "& .MuiMobileStepper-dot ": {
             borderRadius: 25,
             width: 25,
             height: 8,
+            display: 'none',
           },
+          "& .MuiButtonBase-root ":{
+            backgroundColor:'darkgray'
+          }
         })}
         steps={maxSteps}
         position="static"
         activeStep={maxSteps - activeStep - 1}
         nextButton={
           <Button
-            sx={{ display: "block" }}
+            sx={{ display: "block", color: 'white',
+            ":hover": {
+              backgroundColor: "orange",
+              transform: "translateY(-2px)",
+              transition: "0.3s",
+            },
+          }}
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
@@ -216,7 +231,65 @@ const Slider = () => {
         }
         backButton={
           <Button
-            sx={{ display: "block" }}
+            sx={{ display: "block", color: 'white',
+            ":hover": {
+              backgroundColor: "orange",
+              transform: "translateY(-2px)",
+              transition: "0.3s",
+            },
+          }}
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+          >
+            <KeyboardArrowLeft />
+            {/* {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )} */}
+          </Button>
+        }
+      />
+      <MobileStepper                                                        // for the dots
+        sx={(theme) => ({
+          // flexDirection: "row-reverse",
+          backgroundColor:'rgba(0,0,0,0)',
+          position: isMobile? '' : 'absolute',
+          right: '50%',
+          justifyContent: isMobile?'center': '',
+          top: '93%',
+
+          "& .MuiMobileStepper-dot ": {
+            borderRadius: 25,
+            width: 25,
+            height: 8,
+          },
+          "& .MuiMobileStepper-dotActive":{
+            backgroundColor: isMobile? '#16B0D4' : 'orange'
+          }
+        })}
+        steps={maxSteps}
+        position="static"
+        activeStep={maxSteps - activeStep - 1}
+        nextButton={
+          <Button
+            sx={{ display: "none" }}
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            <KeyboardArrowRight />
+            {/* Next */}
+            {/* {theme.direction === "rtl" ? (
+            ) : (
+              <KeyboardArrowLeft />
+            )} */}
+          </Button>
+        }
+        backButton={
+          <Button
+            sx={{ display: "none" }}
             size="small"
             onClick={handleBack}
             disabled={activeStep === 0}
