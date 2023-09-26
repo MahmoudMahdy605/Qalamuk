@@ -42,6 +42,8 @@ const Slider = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
   const isMobile = useMediaQuery("(max-width:600px)");
+  const isBigScreen = useMediaQuery("(min-width:1540px)");
+
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -72,7 +74,7 @@ const Slider = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval={1000000}
+        interval={10000}
       >
         {images.map((step, index) => (
           <div key={`slider-${index}`}>
@@ -92,7 +94,9 @@ const Slider = () => {
                     position: "relative",
                     overflow: "hidden",
                     width: "100%",
-                    height: isMobile ? "550px" : "630px",
+                    height: isMobile ? "550px" : isBigScreen? "831px" : "630px",
+                    // height: isBigScreen? "831px" : '',
+
                   }}
                   src={isMobile ? step.mobImagePath : step.imgPath}
                 />
