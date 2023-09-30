@@ -42,8 +42,8 @@ export const Navbar = () => {
             src={Logo.src}
             variant="rounded"
             sx={{
-              height: "70px",
-              width: "60px",
+              height: "65px",
+              width: "80px",
               transform: "scale(1, 1)",
               transition: "1s",
 
