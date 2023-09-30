@@ -42,7 +42,7 @@ const Slider = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
   const isMobile = useMediaQuery("(max-width:600px)");
-  const isBigScreen = useMediaQuery("(min-width:1540px)");
+  const isBigScreen = useMediaQuery("(min-width:1900px)");
 
 
   const handleNext = () => {
@@ -74,7 +74,7 @@ const Slider = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval={10000}
+        interval={1000000}
       >
         {images.map((step, index) => (
           <div key={`slider-${index}`}>
@@ -94,8 +94,7 @@ const Slider = () => {
                     position: "relative",
                     overflow: "hidden",
                     width: "100%",
-                    height: isMobile ? "550px" : isBigScreen? "831px" : "630px",
-                    // height: isBigScreen? "831px" : '',
+                    height: isMobile ? "550px" : isBigScreen? "857px" : "650px",
 
                   }}
                   src={isMobile ? step.mobImagePath : step.imgPath}
@@ -262,7 +261,7 @@ const Slider = () => {
           position: isMobile? '' : 'absolute',
           right: '50%',
           justifyContent: isMobile?'center': '',
-          top: '93%',
+          top: '96%',
 
           "& .MuiMobileStepper-dot ": {
             borderRadius: 25,
