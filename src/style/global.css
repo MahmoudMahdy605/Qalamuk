@@ -90,7 +90,7 @@ body {
 
 .slideButton {
   background-color: #f3921f;
-  width: 230px;
+  /* width: 30vh; */
 }
 
 /* @media screen and (max-width: 640px) {
