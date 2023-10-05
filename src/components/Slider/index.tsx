@@ -42,6 +42,7 @@ const Slider = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
   const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(min-width:601px) and (max-width:850px)");
   const isBigScreen = useMediaQuery("(min-width:1900px)");
 
 
@@ -94,7 +95,7 @@ const Slider = () => {
                     position: "relative",
                     overflow: "hidden",
                     width: "100%",
-                    height: isMobile ? "550px" : isBigScreen? "857px" : "650px",
+                    height: isMobile ? "550px" : isBigScreen? "857px" : "89.5vh",
 
                   }}
                   src={isMobile ? step.mobImagePath : step.imgPath}
@@ -107,12 +108,13 @@ const Slider = () => {
                       sx={{
                         position: "absolute",
                         bottom: { md: "2%" },
-                        right: isMobile ? "6%" : "10%",
-                        top: isMobile ? "70%" : "",
+                        right: isMobile || isTablet ? "6%" : "10%",
+                        top: isMobile ? "70%" : isMobile || isTablet ? "90%" : "",
                         borderRadius: 10,
                         backgroundColor: "orange",
                         color: "white",
-                        fontSize: 20,
+                        fontSize: isTablet ? 15 : 20,
+                        width: isTablet? '20vh' : '30vh',
                         ":hover": {
                           backgroundColor: "#16B0D4",
                           transform: "translateY(-3px)",
@@ -151,7 +153,7 @@ const Slider = () => {
                           alignItems: "center",
                           gap: 0.5,
                         }}
-                        fontSize={15}
+                        fontSize={isTablet? 10 : 15}
                         fontWeight={600}
                       >
                         <Link href="#" underline="hover" color={"white"}>
@@ -172,7 +174,7 @@ const Slider = () => {
                           alignItems: "center",
                           gap: 0.5,
                         }}
-                        fontSize={15}
+                        fontSize={isTablet? 10 : 15}
                         fontWeight={600}
                       >
                         <Link href="#" underline="hover" color={"white"}>
