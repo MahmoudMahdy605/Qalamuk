@@ -13,6 +13,7 @@ import "../../style/global.css";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import BusinessIcon from "@mui/icons-material/Business";
 import { Link, useMediaQuery } from "@mui/material";
+import { TypeAnimation } from 'react-type-animation';
 import image1 from "../../images/1.png";
 import image2 from "../../images/2.png";
 import image3 from "../../images/3.png";
@@ -122,7 +123,17 @@ const Slider = () => {
                         },
                       }}
                     >
-                      تعرف على قَلَمُك
+                      <TypeAnimation
+                          preRenderFirstString={true}
+                          sequence={[
+                            500,
+                            ' ..تعرف على قَلَمُك', 
+                            1000,
+                            '',
+                          ]}
+                          speed={50}
+                          repeat={Infinity}
+                          />
                     </Button>
                     <Box
                       position={"absolute"}
