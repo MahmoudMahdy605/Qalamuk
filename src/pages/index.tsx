@@ -1,6 +1,7 @@
 import { MiniCard } from "@/components/MiniCard";
 import SlideShow from "@/components/SlideShow";
 import Slider from "@/components/Slider/index";
+import SwipeableTabs from "@/components/SwipeableTabs";
 import {
   AuditOutlined,
   UserSwitchOutlined,
@@ -30,6 +31,7 @@ const Page = () => {
           <MiniCard text={"بروفايل شركة"} value={350} Icon={AuditOutlined} />
         </Grid>
       </Grid>
+      <SwipeableTabs/>
     </Stack>
   );
 };

@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import { Stack, Typography, useTheme } from "@mui/material";
 import Counter from "react-countup";
 import { CalendarOutlined } from "@ant-design/icons";
+const Fade = require('react-reveal/Fade')
 
 export const MiniCard = ({
   value,
@@ -14,6 +15,7 @@ export const MiniCard = ({
 }) => {
   const theme = useTheme();
   return (
+    <Fade left>
     <Stack justifyContent={"center"} alignItems={"center"} width={"100%"}>
       <Stack
         width={"190px"}
@@ -45,5 +47,6 @@ export const MiniCard = ({
         </Stack>
       </Stack>
     </Stack>
+    </Fade>
   );
 };
