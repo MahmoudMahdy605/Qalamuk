@@ -76,7 +76,7 @@ const Slider = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        interval={1000000}
+        interval={10000}
       >
         {images.map((step, index) => (
           <div key={`slider-${index}`}>

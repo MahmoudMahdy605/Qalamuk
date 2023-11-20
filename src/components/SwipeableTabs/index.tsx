@@ -15,7 +15,23 @@ const Fade = require('react-reveal/Fade')
 import { TypeAnimation } from 'react-type-animation';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const myFont = localFont({ src: "../../fonts/GEDinkum-Bold-1.ttf" });
-
+const texts = [
+  { label: 'قصتنا ',
+    Textbody: 'منذ عقدٍ من الزمان انطلقنا ودخلنا إلى عالم الأعمال عبر كتابة النصوص الإعلانية بشكلٍ خاص؛ ثم طورنا منظومة أعمالنا وتعمقنا أكثر في الخدمات النصية؛ ومع مرور الوقت وتحديدًا عام 2017 بدأ قلمك يأخذ منحنى جديد؛ وأصبحنا وجهة أولى للعديد من العملاء في القطاع الحكومي والخاص؛ وعلمنا ما يبحث عنه العملاء فوفرناه بجودةٍ لا تُنافس، وخلال مسيرةٍ حافلة أنهينا قرابة 1300 مشروع لأكثر من 500 عميل داخل وخارج الوطن العربي؛ وكتبنا آلاف النصوص؛ وما زلنا نسعى نحو المزيد؛ فمداد أقلامنا يشتاق إلى تستطير إنجازاتكم'
+  },
+  { label: ' نبذة عنّا',
+    Textbody: ' قلمك نبدع في سرد قصتك لأننا نعرف أسرار الكلمة وتأثيرها؛ وأقلامنا ستحقق لك نتائج تفوق توقعاتك، فخبرتنا لعشر سنوات في ميدان الخدمات النصية جعلنا الخيار الأمثل للكثير من العلامات التجارية والعملاء في مختلف أرجاء الوطن العربي؛ فانضم إلينا الآن واجعل لهويتك بصمةً خاصة؛ ودع فريقنا يبدع ما يميزك. قلمك نعبر عنكم '
+  },
+  { label: 'رؤيتنا ',
+    Textbody: 'أن نكون المنصة الأولى في الوطن العربي في تقديم خدمات المحتوى النصي التي تجمع بين الإبداع والجودة؛ لننشر جمال اللغة وروعة بصمتها في دعم العلامات التجارية والأفراد'
+  },
+  { label: 'رسالتنا ',
+    Textbody: 'توظيف قوة الكلمة في تطوير الأعمال والمشروعات؛ وتقديم حلول إبداعية تلبي حاجة العملاء وتضمن لهم الوصول إلى أهدافهم'
+  },
+  { label: 'هدفنا ',
+    Textbody: 'أن تكون لنا بصمة لدى مختلف العلامات والكيانات البارزة من خلال دعمهم بكتاباتٍ إبداعية تصل إلى جمهورهم وتعبر عنهم'
+  },
+];
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -83,7 +99,7 @@ export default function SwipeableTabs() {
         />
         </Typography>
         <Box sx={{ bgcolor: 'background.paper', width: '80%', margin: 'auto', borderWidth:2 ,  borderStyle: 'dashed', borderColor: '#16B0D4', position: 'relative', marginTop: '35px',
-        borderRadius: '12px', backgroundImage: 'linear-gradient(#F3E7F3, #FFFDFF)' }}>
+        borderRadius: '12px', backgroundImage: 'linear-gradient(#dff9ff, #FFFDFF)' }}>
           <AppBar position="static" 
           sx={{backgroundColor: 'white', border: 2 , borderStyle: 'dashed', borderColor: '#16B0D4',
           boxShadow: 'none', color: '#f3921f' , padding: '4px', width: '80%', borderRadius: '10px', margin: 'auto', transform: 'translate(0, -50%)',
@@ -103,11 +119,11 @@ export default function SwipeableTabs() {
               variant="fullWidth"
               aria-label="full width tabs example"
             >
-              <Tab style={myFont.style} sx={{fontSize: 23}} label="قصتنا" {...a11yProps(0)} />
-              <Tab style={myFont.style} sx={{fontSize: 23}} label="نبذة عنّا" {...a11yProps(1)} />
-              <Tab style={myFont.style} sx={{fontSize: 23}} label="رؤيتنا" {...a11yProps(2)} />
-              <Tab style={myFont.style} sx={{fontSize: 23}} label="رسالتنا" {...a11yProps(3)} />
-              <Tab style={myFont.style} sx={{fontSize: 23}} label="هدفنا" {...a11yProps(4)} />
+              <Tab style={myFont.style} sx={{fontSize: '1rem'}} label="قصتنا" {...a11yProps(0)} />
+              <Tab style={myFont.style} sx={{fontSize: '1rem'}} label="نبذة عنّا" {...a11yProps(1)} />
+              <Tab style={myFont.style} sx={{fontSize: '1rem'}} label="رؤيتنا" {...a11yProps(2)} />
+              <Tab style={myFont.style} sx={{fontSize: '1rem'}} label="رسالتنا" {...a11yProps(3)} />
+              <Tab style={myFont.style} sx={{fontSize: '1rem'}} label="هدفنا" {...a11yProps(4)} />
             </Tabs>
           </AppBar>
           
@@ -117,31 +133,14 @@ export default function SwipeableTabs() {
             index={value}
             onChangeIndex={handleChangeIndex}
           >
-            {/* <TabPanel value={value} index={0} dir={theme.direction} > */}
-            <Typography style={myFont.style} textAlign={'right'}  maxWidth={'60%'} marginLeft={'auto'} marginRight={'10%'} sx={{fontSize: 20}} paddingBottom={3}>
-            منذ عقدٍ من الزمان انطلقنا ودخلنا إلى عالم الأعمال عبر كتابة النصوص الإعلانية بشكلٍ خاص؛ ثم طورنا منظومة أعمالنا وتعمقنا أكثر في الخدمات النصية؛ ومع مرور الوقت وتحديدًا عام 2017 بدأ قلمك يأخذ منحنى جديد؛ وأصبحنا وجهة أولى للعديد من العملاء في القطاع الحكومي والخاص؛ وعلمنا ما يبحث عنه العملاء فوفرناه بجودةٍ لا تُنافس، وخلال مسيرةٍ حافلة أنهينا قرابة 1300 مشروع لأكثر من 500 عميل داخل وخارج الوطن العربي؛ وكتبنا آلاف النصوص؛ وما زلنا نسعى نحو المزيد؛ فمداد أقلامنا يشتاق إلى تستطير إنجازاتكم     
+          {texts.map((text) => (
+            <Typography style={myFont.style} textAlign={'justify'} dir={'rtl'} marginLeft={'10%'} marginRight={'10%'} sx={{fontSize: '1rem'}} paddingBottom={3}>
+              {text.Textbody}
             </Typography>
-            {/* </TabPanel> */}
-            {/* <TabPanel value={value} index={1} dir={theme.direction}> */}
-            <Typography style={myFont.style} textAlign={'right'} maxWidth={'60%'} marginLeft={'auto'} marginRight={'10%'} sx={{fontSize: 20}}>
-            قلمك نبدع في سرد قصتك لأننا نعرف أسرار الكلمة وتأثيرها؛ وأقلامنا ستحقق لك نتائج تفوق توقعاتك، فخبرتنا لعشر سنوات في ميدان الخدمات النصية جعلنا الخيار الأمثل للكثير من العلامات التجارية والعملاء في مختلف أرجاء الوطن العربي؛ فانضم إلينا الآن واجعل لهويتك بصمةً خاصة؛ ودع فريقنا يبدع ما يميزك. قلمك نعبر عنكم
-            </Typography>
-            {/* </TabPanel> */}
-            {/* <TabPanel value={value} index={2} dir={theme.direction}> */}
-            <Typography style={myFont.style} textAlign={'right'} maxWidth={'60%'} marginLeft={'auto'} marginRight={'10%'} sx={{fontSize: 20}}>
-            أن نكون المنصة الأولى في الوطن العربي في تقديم خدمات المحتوى النصي التي تجمع بين الإبداع والجودة؛ لننشر جمال اللغة وروعة بصمتها في دعم العلامات التجارية والأفراد
-            </Typography>
-            {/* </TabPanel> */}
-            {/* <TabPanel value={value} index={3} dir={theme.direction}> */}
-            <Typography style={myFont.style} textAlign={'right'} maxWidth={'60%'} marginLeft={'auto'} marginRight={'10%'} sx={{fontSize: 20}}>
-            توظيف قوة الكلمة في تطوير الأعمال والمشروعات؛ وتقديم حلول إبداعية تلبي حاجة العملاء وتضمن لهم الوصول إلى أهدافهم
-            </Typography>
-            {/* </TabPanel> */}
-            {/* <TabPanel value={value} index={4} dir={theme.direction}> */}
-            <Typography style={myFont.style} textAlign={'right'} maxWidth={'60%'} marginLeft={'auto'} marginRight={'10%'} sx={{fontSize: 20}}>
-            أن تكون لنا بصمة لدى مختلف العلامات والكيانات البارزة من خلال دعمهم بكتاباتٍ إبداعية تصل إلى جمهورهم وتعبر عنهم
-            </Typography>
-            {/* </TabPanel> */}
+            
+          )
+          )}
+  
           </AutoPlaySwipeableViews>
         </Box>
       </Box>
