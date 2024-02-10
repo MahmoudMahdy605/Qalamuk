@@ -32,8 +32,8 @@ const Page = () => {
           <MiniCard text={"بروفايل شركة"} value={350} Icon={AuditOutlined} />
         </Grid>
       </Grid>
-      <ProjectsGallery/>
-      <SwipeableTabs/>
+      <ProjectsGallery />
+      <SwipeableTabs />
     </Stack>
   );
 };

@@ -12,6 +12,7 @@ import {
   Avatar,
   useTheme,
 } from "@mui/material";
+import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
 import Logo from "&/public/images/logo2-rgb-orange&white.png";
 import localFont from "next/font/local";
@@ -38,20 +39,22 @@ export const Navbar = () => {
     <AppBar sx={{ position: "fixed", left: "0", top: "0", width: "100%" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ gap: 2 }}>
-          <Avatar
-            src={Logo.src}
-            variant="rounded"
-            sx={{
-              height: "65px",
-              width: "80px",
-              transform: "scale(1, 1)",
-              transition: "1s",
+          <Link href={"/"}>
+            <Avatar
+              src={Logo.src}
+              variant="rounded"
+              sx={{
+                height: "65px",
+                width: "80px",
+                transform: "scale(1, 1)",
+                transition: "1s",
 
-              "&:hover": {
-                transform: "scale(1.3, 1.3)",
-              },
-            }}
-          />
+                "&:hover": {
+                  transform: "scale(1.3, 1.3)",
+                },
+              }}
+            />
+          </Link>
 
           <Box
             sx={{
